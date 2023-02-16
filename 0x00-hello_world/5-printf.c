@@ -5,7 +5,6 @@
  *   * printf is a function that prints out strings to
  *    * stdout
  *     * Return: All good
- *      */
 
 int main(void)
 {
