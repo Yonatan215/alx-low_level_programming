@@ -10,12 +10,18 @@ int main(void)
 
 		while (c <= 'z')
 		{
-			if (c != 'e' || c != 'q')
-			{
-				putchar(c);
-			}
+			putchar(c);
 			c++;
 		}
-		putchar('\n');
-		return (0);
+			c = 'A';
+
+			while (c <= 'Z')
+			{
+				putchar(c);
+				c++;
+			}
+
+			putchar('\n');
+
+			return (0);
 }
