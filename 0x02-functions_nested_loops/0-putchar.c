@@ -1,8 +1,8 @@
-nclude "main.h"
+include "main.h"
 /**
- *  * main - prints out _putchar
- *   * Return: All good
- *    */
+ * main - prints out _putchar
+ * Return: All good
+ */
 int main(void)
 {
 	char *s = "_putchar"; /*arrays of characters or strings*/
