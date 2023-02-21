@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
  * main - prints out _putchar
  * Return: All good
  */
