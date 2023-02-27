@@ -1,41 +1,42 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _atoi - Convert a string to an integer.
- * @s: The pointer to convert
- *
- * Return: A integer
+ * _atoi - Convert a string to integer.
+ * @s: char array string
+ * Description: Number in the string can be preceded by an infinite
+ * number of characters.
+ * You need to take into account all -/+ signs before the number.
+ * If there are no numbers in the string, return 0.
+ * No need to check for overflow.
+ * Not allowed to hard-code special values.
+ * Return: first integer found in string
  */
+
 int _atoi(char *s)
 {
-	int c = 0;
-	unsigned int ni = 0;
-	int min = 1;
-	int isi = 0;
+	int i;
+	int h, p;
 
-	while (s[c])
+	h = 0;
+	p = -1;
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[c] == 45)
-		{
-			min *= -1;
-		}
+		if (s[i] == '-')
+			p *= -1;
 
-		while (s[c] >= 48 && s[c] <= 57)
+		if (s[i] > 47 && s[i] < 58)
 		{
-			isi = 1;
-			ni = (ni * 10) + (s[c] - '0');
-			c++;
-		}
+			if (h < 0)
+				h = (h * 10) - (s[i] - '0');
+			else
+				h = (s[i] - '0') * -1;
 
-		if (isi == 1)
-		{
-			break;
+			if (s[i + 1] < 48 || s[i + 1] > 57)
+				break;
 		}
-
-		c++;
 	}
+	if (p < 0)
+		h *= -1;
 
-	ni *= min;
-	return (ni);
+	return (h);
 }
-
